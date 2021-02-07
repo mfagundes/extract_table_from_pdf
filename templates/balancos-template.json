@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Balanço de Gás Natural - Brasil",
+    "page": 2,
+    "extraction_method": "guess",
+    "x1": 32.370525398254394,
+    "x2": 562.2053319168091,
+    "y1": 106.04137630462645,
+    "y2": 366.49387950897216,
+    "width": 529.8348065185546,
+    "height": 260.4525032043457
+  },
+  {
+    "name": "Demanda por mercado - Brasil",
+    "page": 2,
+    "extraction_method": "guess",
+    "x1": 31.62637538909912,
+    "x2": 560.7170318984985,
+    "y1": 368.72632953643796,
+    "y2": 502.67333118438717,
+    "width": 529.0906565093994,
+    "height": 133.9470016479492
+  },
+  {
+    "name": "Balanço de Gás Natural - Malha Interligada",
+    "page": 3,
+    "extraction_method": "guess",
+    "x1": 36.091275444030764,
+    "x2": 565.9260819625854,
+    "y1": 106.04137630462645,
+    "y2": 345.6576792526245,
+    "width": 529.8348065185546,
+    "height": 239.61630294799804
+  },
+  {
+    "name": "Demanda por mercado - Malha Interligada",
+    "page": 3,
+    "extraction_method": "guess",
+    "x1": 36.091275444030764,
+    "x2": 557.7404318618774,
+    "y1": 347.1459792709351,
+    "y2": 484.06958095550533,
+    "width": 521.6491564178467,
+    "height": 136.92360168457031
+  },
+  {
+    "name": "Balanço de gás natural - Sistemas Isolados",
+    "page": 3,
+    "extraction_method": "guess",
+    "x1": 37.57957546234131,
+    "x2": 559.9728818893433,
+    "y1": 539.1366816329955,
+    "y2": 655.2240830612183,
+    "width": 522.3933064270019,
+    "height": 116.08740142822265
+  },
+  {
+    "name": "Demanda por mercado - Sistemas Isolados",
+    "page": 3,
+    "extraction_method": "guess",
+    "x1": 37.57957546234131,
+    "x2": 556.9962818527222,
+    "y1": 656.7123830795288,
+    "y2": 774.288084526062,
+    "width": 519.4167063903808,
+    "height": 117.5757014465332
+  }
+]
