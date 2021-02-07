@@ -4,7 +4,7 @@ import pandas as pd
 
 from extract_tables import FILE, TEMPLATES_FILE, PANDAS_OPTIONS, read_table, \
     read_table_with_template, get_template
-from formatters import format_balanco_gas_geral
+from formatters import format_balanco_gas_geral, format_demanda_por_mercado
 
 pd.set_option('display.max_columns', 9999)
 
@@ -33,12 +33,14 @@ def test_read_table_with_templates(file, template_file, template_name):
     assert isinstance(table, pd.core.frame.DataFrame)
 
 
-def get_file():
-    df = pd.read_csv('teste.csv')
-    return df
-
 
 def test_format_balanco_gas_natural():
     df = read_table_with_template(FILE, TEMPLATES_FILE, 'Balanço de Gás Natural - Brasil')
     balanco = format_balanco_gas_geral(df)
     assert balanco.shape == (13,18)
+
+
+def test_format_demanda_por_mercados():
+    df = read_table_with_template(FILE, TEMPLATES_FILE, 'Demanda por mercado - Brasil')
+    balanco = format_demanda_por_mercado(df)
+    assert balanco.shape == (8,18)

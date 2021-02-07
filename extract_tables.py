@@ -42,15 +42,14 @@ def read_table_with_template(file, template_file, template_name, fmt_func=None):
     template = get_template(template_file, template_name)
     with open('template.json', 'w') as json_file:
         json_file.write(json.dumps(template))
-    table = tabula.read_pdf_with_template(file, 'template.json')[0]
-    table.reindex()
+    table = tabula.read_pdf_with_template(file, 'template.json', pandas_options={'header':None})[0]
     if fmt_func:
-        format_balanco_gas_geral(table)
+        fmt_func(table)
     return table
 
 
 if __name__== '__main__':
-    from formatters import format_balanco_gas_geral
+    from formatters import format_balanco_gas_geral, format_demanda_por_mercado
     from slugify import slugify
     parser = argparse.ArgumentParser(prog='main',
                                      description='Conversor de tabelas do Gás Natural')
@@ -58,7 +57,11 @@ if __name__== '__main__':
         'balanco-brasil': {
             'titulo': 'Balanço de Gás Natural - Brasil',
             'format_function': format_balanco_gas_geral
-        }
+        },
+        'demanda-mercado-brasil': {
+            'titulo': 'Demanda por mercado - Brasil',
+            'format_function': format_demanda_por_mercado
+        },
     }
     parser.add_argument('--tabela', '-t', help='Tabela a ser extraída', required=True)
 
