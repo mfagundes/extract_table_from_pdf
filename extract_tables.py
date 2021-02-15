@@ -55,9 +55,25 @@ if __name__== '__main__':
     from formatters import format_balanco_gas_geral, format_demanda_por_mercado
     from slugify import slugify
     parser = argparse.ArgumentParser(prog='main',
-                                     description='Conversor de tabelas do Gás Natural')
+                                     description='Conversor de tabelas do Gás Natural',
+                                     formatter_class=argparse.RawTextHelpFormatter
+                                     )
     tabelas = settings.TABELAS
-    parser.add_argument('--tabela', '-t', help='Tabela a ser extraída', required=True)
+    import textwrap
+    tabelas_help = textwrap.dedent('''\
+    Tabela a ser extraída. Valores válidos:
+    ---------------------------------------
+    ''')
+    for tabela in tabelas.items():
+        tabelas_help += textwrap.indent(
+            f"{tabela[0]}: {tabela[1]['titulo']}\n",
+            prefix='+')
+    parser.add_argument(
+        '--tabela',
+        '-t',
+        help=tabelas_help,
+        required=True
+    )
 
     args = parser.parse_args()
     if args.tabela in tabelas:
